@@ -39,42 +39,12 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({"error": message});
 }
 
-/*
-//GET
-app.get('/', function(req, res) {
-  res.send("Request Handled");
-});
-*/
-/*  "/contacts"
- *    GET: finds all contacts
- *    POST: creates a new contact
- */
-
-app.get("/contacts", function(req, res) {
-  db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
-    if (err) {
-      handleError(res, err.message, "Failed to get contacts.");
-    } else {
-      res.status(200).json(docs);
-    }
-  });
+app.get("/", function(req, res) {
+  res.status(200).json(docs);
 });
 
-app.post("/contacts", function(req, res) {
-  var newContact = req.body;
-  newContact.createDate = new Date();
-
-  if (!(req.body.firstName || req.body.lastName)) {
-    handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
-  }
-
-  db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
-    if (err) {
-      handleError(res, err.message, "Failed to create new contact.");
-    } else {
-      res.status(201).json(doc.ops[0]);
-    }
-  });
+app.post("/", function(req, res) {
+  res.status(201).json(doc.ops[0]);
 });
 
 /*  "/contacts/:id"
@@ -83,6 +53,7 @@ app.post("/contacts", function(req, res) {
  *    DELETE: deletes contact by id
  */
 
+/*
 app.get("/contacts/:id", function(req, res) {
   db.collection(CONTACTS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
     if (err) {
@@ -115,3 +86,4 @@ app.delete("/contacts/:id", function(req, res) {
     }
   });
 });
+*/
