@@ -1,7 +1,7 @@
 {
   "name": "Thank You Note",
   "version": "1.0.0",
-  "main": "galaxy.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
