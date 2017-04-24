@@ -4782,9 +4782,9 @@ a.list-group-item-danger.active:focus {
   color: inherit;
 }
 .panel-footer {
-  padding: 10px 15px;
+  padding: 50px 50px;
   background-color: #18cbd8;
-  border-top: 1px solid #0d747c;
+  border-top: 2px solid #0d747c;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
